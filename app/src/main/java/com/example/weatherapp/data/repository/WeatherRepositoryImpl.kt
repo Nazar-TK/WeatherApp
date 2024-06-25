@@ -15,7 +15,7 @@ class WeatherRepositoryImpl @Inject constructor(private val api: WeatherApi): We
             Resource.Success(data = api.getWeatherData(
                 latitude = latitude,
                 longitude = longitude,
-                apiKey = "fa3c9b3d2b1a427475069e4c439edf86"
+                apiKey = "aaaaaaaaaaaaaaaaaaa"
             ).toCurrentWeatherData())
         } catch (e: Exception) {
             e.printStackTrace()
