@@ -6,10 +6,15 @@ import retrofit2.http.Query
 
 interface WeatherApi {
 
-    @GET("/data/2.5/weather?units=metric")
+    @GET("data/2.5/weather?units=metric")
     suspend fun getWeatherData(
         @Query("lat") latitude: Double,
         @Query("lon") longitude: Double,
         @Query("appid") apiKey: String
         ) : CurrentWeatherDto
+
+
+    companion object {
+        const val BASE_URL = "https://api.openweathermap.org/"
+    }
 }
