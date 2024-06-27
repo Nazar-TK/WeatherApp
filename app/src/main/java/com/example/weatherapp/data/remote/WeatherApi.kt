@@ -5,6 +5,7 @@ import okhttp3.ResponseBody
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
+import retrofit2.http.Url
 
 interface WeatherApi {
 
@@ -15,8 +16,11 @@ interface WeatherApi {
         @Query("appid") apiKey: String
         ) : CurrentWeatherDto
 
-    @GET("/img/wn/{iconCode}@2x.png")
-    suspend fun fetchImage(@Path("iconCode") iconCode: String): ResponseBody
+    //@GET("img/wn/{iconCode}@2x.png")
+    //https://openweathermap.org/img/wn/10d@2x.png
+    //suspend fun fetchImage(@Path("iconCode") iconCode: String): ResponseBody
+    @GET
+    suspend fun fetchImage(@Url url: String): ResponseBody
 
     companion object {
         const val BASE_URL = "https://api.openweathermap.org/"

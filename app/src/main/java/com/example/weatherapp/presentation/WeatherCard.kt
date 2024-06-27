@@ -48,13 +48,20 @@ fun WeatherCard(
             ) {
                 Text(
                     text = data.time.format(DateTimeFormatter.ofPattern("dd MMMM  HH:mm")),
-                    modifier = Modifier.align(Alignment.Start),
+                    modifier = Modifier.align(Alignment.CenterHorizontally),
+                    color = Color.White,
+                    fontSize = 24.sp,
+                )
+                Spacer(modifier = Modifier.height(16.dp))
+                Text(
+                    text = data.location,
+                    modifier = Modifier.align(Alignment.CenterHorizontally),
                     color = Color.White,
                     fontSize = 24.sp,
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 Image(
-                    painter = data.weatherType.weatherIcon ?: painterResource(R.drawable.ic_sunny),
+                    painter = data.weatherIcon ?: painterResource(R.drawable.ic_sunny),
                     contentDescription = null,
                     modifier = Modifier.width(150.dp)
                 )
@@ -66,7 +73,7 @@ fun WeatherCard(
                 )
                 Spacer(modifier = Modifier.height(16.dp))
                 Text(
-                    text = data.weatherType.weatherStatus,
+                    text = data.weatherStatus,
                     fontSize = 24.sp,
                     color = Color.White
                 )

@@ -86,4 +86,9 @@ dependencies {
 
     // Location Services
     implementation("com.google.android.gms:play-services-location:20.0.0")
+
+    // OkHttp
+    implementation("com.squareup.okhttp3:okhttp:4.9.3")
+    implementation("com.squareup.okio:okio:2.10.0")
+
 }
