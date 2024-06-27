@@ -1,7 +1,9 @@
 package com.example.weatherapp.data.remote
 
 import com.example.weatherapp.data.remote.dto.CurrentWeatherDto
+import okhttp3.ResponseBody
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface WeatherApi {
@@ -13,6 +15,8 @@ interface WeatherApi {
         @Query("appid") apiKey: String
         ) : CurrentWeatherDto
 
+    @GET("/img/wn/{iconCode}@2x.png")
+    suspend fun fetchImage(@Path("iconCode") iconCode: String): ResponseBody
 
     companion object {
         const val BASE_URL = "https://api.openweathermap.org/"

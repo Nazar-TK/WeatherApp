@@ -2,7 +2,6 @@ package com.example.weatherapp.data.remote.dto
 
 
 import com.example.weatherapp.domain.weather.CurrentWeatherData
-import com.example.weatherapp.domain.weather.WeatherType
 import java.time.Instant
 import java.time.LocalDateTime
 import java.time.ZoneOffset
@@ -33,8 +32,9 @@ data class CurrentWeatherDto(
             pressure = main.pressure,
             humidity = main.humidity,
             windSpeed = wind.speed,
-            weatherType = WeatherType(weather[0].description, weather[0].icon),
-            location = "${name}, $countryName"
+            location = "${name}, $countryName",
+            weatherStatus = weather[0].description,
+            iconId = weather[0].icon
         )
     }
 }
